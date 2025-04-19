@@ -30,15 +30,74 @@ Once the container is running:
 - `.devcontainer/` - Contains configuration for the development container
 - `ConsoleApp/` - The .NET console application project
 - `DotnetDevContainer.sln` - The solution file
+- `.github/workflows/` - GitHub Actions workflow configurations
 
 ## Features
 
 - Full .NET SDK environment ready for development
 - Pre-installed VS Code extensions for .NET development
 - Configured for debugging and running .NET applications
+- GitHub Actions workflow for CI/CD and container publishing
 
 ## Development Tips
 
 - Use the "Run" menu or F5 to debug the application
 - The terminal inside VS Code connects directly to the container
 - All dependencies are installed in the container, keeping your local system clean
+
+## Docker Container Deployment
+
+### Building and Running Locally
+
+Build the Docker image:
+```
+docker build -t dotnet-dev-container .
+```
+
+Run the container:
+```
+docker run --rm dotnet-dev-container
+```
+
+### GitHub Container Registry Deployment
+
+#### Automatic Deployment via GitHub Actions
+
+This repository includes a GitHub Actions workflow that automatically builds and pushes the Docker image to GitHub Container Registry when:
+- You push to the main branch
+- You create a release tag (format: v1.0.0)
+
+The workflow file is located at `.github/workflows/docker-publish.yml`.
+
+To access the published images:
+1. Go to your GitHub repository
+2. Click on the "Packages" tab
+3. Select the container image
+
+#### Manual Deployment to GitHub Container Registry
+
+1. Login to GitHub Container Registry:
+   ```
+   export CR_PAT=YOUR_PERSONAL_ACCESS_TOKEN
+   echo $CR_PAT | docker login ghcr.io -u YOUR_GITHUB_USERNAME --password-stdin
+   ```
+
+2. Build and tag your image:
+   ```
+   docker build -t ghcr.io/YOUR_GITHUB_USERNAME/dotnet-dev-container:latest .
+   ```
+
+3. Push the image to GitHub Container Registry:
+   ```
+   docker push ghcr.io/YOUR_GITHUB_USERNAME/dotnet-dev-container:latest
+   ```
+
+### Using the Container from GitHub Container Registry
+
+After the image is published, you can pull and run it using:
+```
+docker pull ghcr.io/YOUR_GITHUB_USERNAME/dotnet-dev-container:latest
+docker run --rm ghcr.io/YOUR_GITHUB_USERNAME/dotnet-dev-container:latest
+```
+
+Replace `YOUR_GITHUB_USERNAME` with your actual GitHub username.
