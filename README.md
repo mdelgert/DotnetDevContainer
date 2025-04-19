@@ -79,25 +79,25 @@ To access the published images:
 1. Login to GitHub Container Registry:
    ```
    export CR_PAT=YOUR_PERSONAL_ACCESS_TOKEN
-   echo $CR_PAT | docker login ghcr.io -u YOUR_GITHUB_USERNAME --password-stdin
+   echo $CR_PAT | docker login ghcr.io -u mdelgert --password-stdin
    ```
 
 2. Build and tag your image:
    ```
-   docker build -t ghcr.io/YOUR_GITHUB_USERNAME/dotnet-dev-container:latest .
+   docker build -t ghcr.io/mdelgert/dotnet-dev-container:latest .
    ```
 
 3. Push the image to GitHub Container Registry:
    ```
-   docker push ghcr.io/YOUR_GITHUB_USERNAME/dotnet-dev-container:latest
+   docker push ghcr.io/mdelgert/dotnet-dev-container:latest
    ```
 
 ### Using the Container from GitHub Container Registry
 
 After the image is published, you can pull and run it using:
 ```
-docker pull ghcr.io/YOUR_GITHUB_USERNAME/dotnet-dev-container:latest
-docker run --rm ghcr.io/YOUR_GITHUB_USERNAME/dotnet-dev-container:latest
+docker pull ghcr.io/mdelgert/dotnet-dev-container:latest
+docker run --rm ghcr.io/mdelgert/dotnet-dev-container:latest
 ```
 
-Replace `YOUR_GITHUB_USERNAME` with your actual GitHub username.
+Replace `mdelgert` with your actual GitHub username.
