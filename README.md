@@ -99,3 +99,9 @@ After the image is published, you can pull and run it using:
 docker pull ghcr.io/mdelgert/dotnetdevcontainer:latest
 docker run --rm ghcr.io/mdelgert/dotnetdevcontainer:latest
 ```
+
+### Enter the container and run the program manually
+```
+docker run -it --rm --entrypoint /bin/bash ghcr.io/mdelgert/dotnetdevcontainer
+dotnet ConsoleApp.dll
+```
