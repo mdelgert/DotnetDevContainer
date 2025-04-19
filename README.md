@@ -99,5 +99,3 @@ After the image is published, you can pull and run it using:
 docker pull ghcr.io/mdelgert/dotnet-dev-container:latest
 docker run --rm ghcr.io/mdelgert/dotnet-dev-container:latest
 ```
-
-Replace `mdelgert` with your actual GitHub username.
