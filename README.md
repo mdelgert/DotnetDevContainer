@@ -51,12 +51,12 @@ Once the container is running:
 
 Build the Docker image:
 ```
-docker build -t dotnet-dev-container .
+docker build -t dotnetdevcontainer .
 ```
 
 Run the container:
 ```
-docker run --rm dotnet-dev-container
+docker run --rm dotnetdevcontainer
 ```
 
 ### GitHub Container Registry Deployment
@@ -84,18 +84,18 @@ To access the published images:
 
 2. Build and tag your image:
    ```
-   docker build -t ghcr.io/mdelgert/dotnet-dev-container:latest .
+   docker build -t ghcr.io/mdelgert/dotnetdevcontainer:latest .
    ```
 
 3. Push the image to GitHub Container Registry:
    ```
-   docker push ghcr.io/mdelgert/dotnet-dev-container:latest
+   docker push ghcr.io/mdelgert/dotnetdevcontainer:latest
    ```
 
 ### Using the Container from GitHub Container Registry
 
 After the image is published, you can pull and run it using:
 ```
-docker pull ghcr.io/mdelgert/dotnet-dev-container:latest
-docker run --rm ghcr.io/mdelgert/dotnet-dev-container:latest
+docker pull ghcr.io/mdelgert/dotnetdevcontainer:latest
+docker run --rm ghcr.io/mdelgert/dotnetdevcontainer:latest
 ```
