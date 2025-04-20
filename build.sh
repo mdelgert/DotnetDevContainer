@@ -1,5 +1,8 @@
 # Build the Docker image
-docker build -t dotnet-dev-container .
+docker build -t dotnetdevcontainer .
 
 # Run the container
-docker run --name console-app dotnet-dev-container
+docker run --name console-app dotnetdevcontainer
+
+# Enter the container
+#docker run -it --rm --entrypoint /bin/bash dotnetdevcontainer
