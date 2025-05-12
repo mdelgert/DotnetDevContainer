@@ -13,7 +13,8 @@
                 "ms-vscode.vscode-node-azure-pack",
                 "patcx.vscode-nuget-gallery",
                 "kreativ-software.csharpextensions",
-                "ms-dotnettools.dotnet-interactive-vscode"
+                "ms-dotnettools.dotnet-interactive-vscode",
+                "ms-dotnettools.csdevkit"
             ],
             "settings": {
                 "omnisharp.enableRoslynAnalyzers": true,
