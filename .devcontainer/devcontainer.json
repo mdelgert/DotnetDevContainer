@@ -15,7 +15,8 @@
                 "patcx.vscode-nuget-gallery",
                 "kreativ-software.csharpextensions",
                 "ms-dotnettools.dotnet-interactive-vscode",
-                "ms-dotnettools.csdevkit"
+                "ms-dotnettools.csdevkit",
+                "ms-azuretools.vscode-containers"
             ],
             "settings": {
                 "omnisharp.enableRoslynAnalyzers": true,
@@ -23,9 +24,12 @@
             }
         }
     },
-    "postCreateCommand": "dotnet restore",
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y docker.io docker-compose && dotnet restore",
     "remoteUser": "vscode",
     "mounts": [
         "source=${env:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
-    ]
+    ],
+    "containerEnv": {
+        "DOCKER_HOST": "ssh://mdelgert@d3:22"
+    }
 }
