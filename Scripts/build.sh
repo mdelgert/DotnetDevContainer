@@ -1,3 +1,6 @@
+#bin/bash
+cd ../
+
 # Build the Docker image
 docker build -t dotnetdevcontainer .
 
