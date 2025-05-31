@@ -30,7 +30,7 @@
     },
     "postCreateCommand": "dotnet restore",
     "containerEnv": {
-        "version": "v1.0.2"
+        "APP_VERSION": "v1.0.2"
     },
     "remoteUser": "vscode",
     "mounts": [

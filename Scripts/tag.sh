@@ -1,9 +1,8 @@
 #!/bin/bash
 
 cd ../
-VERSION="v1.0.1"
-echo "Current version is $VERSION"
-git tag -d $VERSION
-git push origin --delete $VERSION
-git tag -a $VERSION -m "build version $VERSION"
-git push origin $VERSION
+echo "Current version is $APP_VERSION"
+git tag -d $APP_VERSION
+git push origin --delete $APP_VERSION
+git tag -a $APP_VERSION -m "build version $APP_VERSION"
+git push origin $APP_VERSION
