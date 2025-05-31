@@ -29,6 +29,9 @@
         }
     },
     "postCreateCommand": "dotnet restore",
+    "containerEnv": {
+        "version": "v1.0.2"
+    },
     "remoteUser": "vscode",
     "mounts": [
         "source=${env:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
