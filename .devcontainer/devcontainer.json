@@ -4,6 +4,9 @@
     "features": {
         "ghcr.io/devcontainers/features/git:1": {},
         "ghcr.io/devcontainers/features/dotnet:2": {},
+        "ghcr.io/devcontainers/features/azure-cli:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/powershell:1": {},
         "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
     },
     "customizations": {
@@ -25,13 +28,9 @@
             }
         }
     },
-    // "postCreateCommand": "sudo apt-get update && sudo apt-get install -y docker.io docker-compose && dotnet restore",
-        "postCreateCommand": "dotnet restore",
+    "postCreateCommand": "dotnet restore",
     "remoteUser": "vscode",
     "mounts": [
         "source=${env:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
     ]
-    // "containerEnv": {
-    //     "DOCKER_HOST": "ssh://mdelgert@d3:22"
-    // }
 }
